@@ -14,7 +14,7 @@
 		9D372FEE2DCFA60D0049C3D9 /* Exceptions for "GolfApp" folder in "GolfApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Models/Untitled.swift,
+				Models/course.swift,
 			);
 			target = 9D372FD72DCEA0F20049C3D9 /* GolfApp */;
 		};
