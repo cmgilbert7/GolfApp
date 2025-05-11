@@ -34,13 +34,15 @@ struct Hole: Equatable, Codable, Identifiable {
     let distances: [TeeColor: Int]
     let handicap: Int
     let centerGreenLocation: Coordinate
+    let overviewImageName: String
     
-    init(id: UUID, number: Int, par: Int, distances: [TeeColor : Int], handicap: Int, centerGreenLocation: Coordinate) {
+    init(id: UUID, number: Int, par: Int, distances: [TeeColor : Int], handicap: Int, centerGreenLocation: Coordinate, overviewImageName: String) {
         self.id = id
         self.number = number
         self.par = par
         self.distances = distances
         self.handicap = handicap
         self.centerGreenLocation = centerGreenLocation
+        self.overviewImageName = overviewImageName
     }
 }
