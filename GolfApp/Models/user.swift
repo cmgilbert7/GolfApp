@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 import CoreLocation
 
-struct User: Equatable, Hashable, Codable, Identifiable {
+struct User: Equatable, Codable, Identifiable {
     let id: UUID
     let firstName: String
     let lastName: String

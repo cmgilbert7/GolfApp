@@ -11,10 +11,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9D372FEE2DCFA60D0049C3D9 /* Exceptions for "GolfApp" folder in "GolfApp" target */ = {
+		9D3730322DD119C00049C3D9 /* Exceptions for "GolfApp" folder in "GolfApp" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Models/course.swift,
+				Views/Untitled.swift,
 			);
 			target = 9D372FD72DCEA0F20049C3D9 /* GolfApp */;
 		};
@@ -24,7 +24,7 @@
 		9D372FDA2DCEA0F20049C3D9 /* GolfApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9D372FEE2DCFA60D0049C3D9 /* Exceptions for "GolfApp" folder in "GolfApp" target */,
+				9D3730322DD119C00049C3D9 /* Exceptions for "GolfApp" folder in "GolfApp" target */,
 			);
 			path = GolfApp;
 			sourceTree = "<group>";

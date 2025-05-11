@@ -1,5 +1,5 @@
 //
-//  hole.swift
+//  Hole.swift
 //  GolfApp
 //
 //  Created by Christopher G. on 5/10/25.
@@ -9,12 +9,13 @@ import Foundation
 import CoreLocation
 import SwiftUI
 
-enum TeeColor: String, Codable, CaseIterable, Hashable {
+enum TeeColor: String, Codable, CaseIterable {
     case gold
     case blue
     case white
     case green
     case red
+    case yellow
 }
 
 struct Coordinate: Codable, Equatable {
@@ -43,4 +44,3 @@ struct Hole: Equatable, Codable, Identifiable {
         self.centerGreenLocation = centerGreenLocation
     }
 }
-

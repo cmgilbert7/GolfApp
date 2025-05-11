@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 
 
-struct ScoreCard: Equatable, Hashable, Codable, Identifiable {
+struct ScoreCard: Equatable, Codable, Identifiable {
     let id: UUID
     let user: User
     let tees: TeeColor
