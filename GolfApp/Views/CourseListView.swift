@@ -12,22 +12,34 @@ struct CourseListView: View {
 
     var body: some View {
         NavigationView {
-            List(SampleData.courses) { course in
-                NavigationLink {
-                    StartRoundView(course: course, user: user) { finalScorecard in
-                        print("Round finished with scores: \(finalScorecard.scores)")
+            VStack( spacing: 20) {
+                List(SampleData.courses) { course in
+                    NavigationLink {
+                        StartRoundView(course: course, user: user) { finalScorecard in
+                            print("Round finished with scores: \(finalScorecard.scores)")
+                        }
+                    } label: {
+                        Text(course.name)
                     }
-                } label: {
-                    Text(course.name)
+                }
+                .navigationTitle("Choose Course")
+                
+                NavigationLink(destination: LoadCourseView()) {
+                    Text("Load Course")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding()
+                }
+                Divider()
+                NavigationLink(destination: AddCourseView()) {
+                    Text("Add Course")
+                    .font(.headline)
+                    .foregroundColor(.blue)
+                    .padding()
                 }
             }
-            .navigationTitle("Choose Course")
+
         }
-        NavigationLink(destination: AddCourseView()) {
-                           Text("Add Course")
-                               .font(.headline)
-                               .foregroundColor(.blue)
-                               .padding()
-                       }
+
     }
 }

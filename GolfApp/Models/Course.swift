@@ -13,7 +13,7 @@ struct Course: Equatable, Codable, Identifiable {
     let id: UUID
     let name: String
     let par: Int
-    let holes: [Hole]
+    var holes: [Hole]
     
     init(id: UUID, name: String, par: Int, holes: [Hole]) {
         self.id = id

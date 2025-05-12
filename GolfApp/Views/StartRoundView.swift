@@ -34,7 +34,7 @@ struct StartRoundView: View {
                         tees: selectedTee,
                         scores: Array(repeating: nil, count: course.holes.count)
                     )
-                    HoleRoundView(course: course, scorecard: .constant(scorecard), onEnd: onEnd)
+//                    HoleRoundView(course: course, scorecard: .constant(scorecard), onEnd: onEnd)
                 }
             ) {
                 Text("Start Round")
