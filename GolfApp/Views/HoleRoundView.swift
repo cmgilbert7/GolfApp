@@ -12,7 +12,7 @@ import SwiftUI
 struct HoleRoundView: View {
     let course: Course
     @Binding var scorecard: ScoreCard
-    
+    let onEnd: (ScoreCard) -> Void
     @State private var currentHoleIndex: Int = 0
     @State private var showingOverview: Bool = true
 
@@ -20,10 +20,6 @@ struct HoleRoundView: View {
         let hole = course.holes[currentHoleIndex]
 
         VStack(spacing: 16) {
-//            Text("Hole \(hole.number)")
-//                .font(.largeTitle)
-//                .bold()
-
             if showingOverview {
                 HoleOverviewView(hole: hole, selectedTee: scorecard.tees)
             } else {
@@ -67,7 +63,7 @@ struct HoleRoundView: View {
         .navigationTitle("Hole \(hole.number)")
         .toolbar {
             NavigationLink("Scorecard") {
-                ScorecardView(scorecard: scorecard, course: course)
+                ScorecardView(scorecard: scorecard, course: course, onEnd: onEnd)
             }
         }
     }

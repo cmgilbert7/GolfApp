@@ -10,9 +10,22 @@
 		9D372FD82DCEA0F20049C3D9 /* GolfApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9D31B2052DD2530500B53C7B /* Exceptions for "GolfApp" folder in "GolfApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Views/Untitled.swift,
+			);
+			target = 9D372FD72DCEA0F20049C3D9 /* GolfApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9D372FDA2DCEA0F20049C3D9 /* GolfApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9D31B2052DD2530500B53C7B /* Exceptions for "GolfApp" folder in "GolfApp" target */,
+			);
 			path = GolfApp;
 			sourceTree = "<group>";
 		};

@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct CourseListView: View {
-    @State var courses: [Course] = [SampleData.pinehurstNo1]
-    @State var selectedCourse: Course? = nil
-    @State var user: User = User(id: UUID(), firstName: "Test", lastName: "User", handicap: 12.3)
+    let user: User
 
     var body: some View {
         NavigationView {
-            List(courses) { course in
-                NavigationLink(
-                    destination: StartRoundView(course: course, user: user)
-                ) {
+            List(SampleData.courses) { course in
+                NavigationLink {
+                    StartRoundView(course: course, user: user) { finalScorecard in
+                        print("Round finished with scores: \(finalScorecard.scores)")
+                    }
+                } label: {
                     Text(course.name)
                 }
             }
             .navigationTitle("Choose Course")
         }
+        NavigationLink(destination: AddCourseView()) {
+                           Text("Add Course")
+                               .font(.headline)
+                               .foregroundColor(.blue)
+                               .padding()
+                       }
     }
 }

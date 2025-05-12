@@ -34,4 +34,8 @@ struct SampleData {
 
         ]
     )
+    static let courses: [Course] = [
+        pinehurstNo1
+        // You can add more courses here later
+    ]
 }

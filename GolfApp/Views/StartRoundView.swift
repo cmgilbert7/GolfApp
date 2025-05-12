@@ -8,25 +8,11 @@
 
 import SwiftUI
 
-
-
 struct StartRoundView: View {
-    @State private var selectedTee: TeeColor = .blue
     let course: Course
     let user: User
-
-    @State private var scorecard: ScoreCard
-
-    init(course: Course, user: User) {
-        self.course = course
-        self.user = user
-        _scorecard = State(initialValue: ScoreCard(
-            id: UUID(),
-            user: user,
-            tees: .blue,
-            scores: Array(repeating: nil, count: course.holes.count)
-        ))
-    }
+    let onEnd: (ScoreCard) -> Void
+    @State private var selectedTee: TeeColor = .white
 
     var body: some View {
         VStack(spacing: 20) {
@@ -41,7 +27,15 @@ struct StartRoundView: View {
             .pickerStyle(.segmented)
 
             NavigationLink(
-                destination: HoleRoundView(course: course, scorecard: $scorecard)
+                destination: {
+                    let scorecard = ScoreCard(
+                        id: UUID(),
+                        user: user,
+                        tees: selectedTee,
+                        scores: Array(repeating: nil, count: course.holes.count)
+                    )
+                    HoleRoundView(course: course, scorecard: .constant(scorecard), onEnd: onEnd)
+                }
             ) {
                 Text("Start Round")
                     .font(.title2)
@@ -51,8 +45,12 @@ struct StartRoundView: View {
                     .foregroundColor(.white)
                     .cornerRadius(12)
             }
+            Spacer()
+                .frame(height: 500)
         }
         .padding()
         .navigationTitle("New Round")
     }
 }
+
+
